@@ -6,11 +6,15 @@ Hush is a simple password manager powered through the command line. The password
 
 ```
 $ python3 hush.py
-    1. make pasta
-    Number of items: 1
-$ python3 hush.py delete 3
+          Name                  Email     Username   Password             Notes
+    0  Twitter  coolperson1@gmail.com  coolperson1  Coolaid99  personal twitter
+$ python3 hush.py delete 0
 $ python3 hush.py add
-
+    Name of service: github 
+    Email: coolgithub@outlook.com
+    Username: cool123 
+    Password: iamcool11 
+    (Optional) Notes:
 ```
 
 ## Installation 
@@ -33,7 +37,7 @@ $ python3 hush.py delete <query (int)>
 	deletes the entry at index <query (int)> in the db. 
 ```
 
-The following argument abreviations are supported: 
+The following argument **abreviations** are supported: 
 
 - `add` --> `a`
 - `len` --> `l`
