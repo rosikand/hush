@@ -20,12 +20,14 @@ $ python3 hush.py d <query (int)>
 """
 
 import sys 
-import pdb
+import os
 import pandas as pd
 
 
 # init global vars 
-PASSWORDS_FILE_PATH = "passwords.csv"
+curr_dir_path = os.path.dirname(os.path.realpath(__file__))
+PASSWORDS_PATH = "passwords.csv"
+PASSWORDS_FILE_PATH = os.path.join(curr_dir_path, PASSWORDS_PATH)
 DATABASE = pd.read_csv(PASSWORDS_FILE_PATH)
 
 
