@@ -34,6 +34,7 @@ def length():
 	"""
 	Returns the number of passwords stored in the database. 
 	"""
+	global DATABASE
 	return len(DATABASE)
 
 
@@ -49,6 +50,7 @@ def add():
     4. Password
     5. (Optional) Notes
 	"""
+	global DATABASE
 	new_row = []
 	for i in range(5):
 		if i == 0:
@@ -86,6 +88,7 @@ def show():
 	"""
 	Function that prints out all the passwords in the list. 
 	"""
+	global DATABASE
 	print(DATABASE)
 
 
@@ -106,9 +109,10 @@ def delete(idx):
 	deletes an entry from the database specified at index. 
 	Index starts at 0. 
 	"""
+	global DATABASE
 	assert (idx < length() - 1) and (idx >= 0), "specified index must be in bounds"
 	DATABASE.drop(idx, inplace=True)
-	DATABASE.reset_index(inplace=True)
+	DATABASE.reset_index(drop=True, inplace=True)
 
 	save()
 
@@ -119,6 +123,7 @@ def save():
 	helper function to assist in serialization. Saves the contents 
 	of new_database to PASSWORDS_FILE_PATH. 
 	""" 
+	global DATABASE
 	DATABASE.to_csv(PASSWORDS_FILE_PATH, index=False) 
 
 
@@ -129,6 +134,8 @@ def save():
 def main():
 	user_arguments = sys.argv[1:]
 	arg_count = len(user_arguments)  # num user arguments 
+
+	# todo: assert that the user_arguments are valid 
 
 	# print out list if no argument was specified 
 	if arg_count == 0:
