@@ -47,3 +47,4 @@ The following argument **abreviations** are supported:
 
 - Implement `hush.search`. 
 - Implement encryption on the `passwords.csv` database. 
+- Cut the "notes" section when printing out the database 
