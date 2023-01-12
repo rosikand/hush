@@ -112,7 +112,7 @@ def delete(idx):
 	Index starts at 0. 
 	"""
 	global DATABASE
-	assert (idx < length() - 1) and (idx >= 0), "specified index must be in bounds"
+	assert (idx < length()) and (idx >= 0), "specified index must be in bounds"
 	DATABASE.drop(idx, inplace=True)
 	DATABASE.reset_index(drop=True, inplace=True)
 
