@@ -25,7 +25,7 @@ import pandas as pd
 
 
 # init global vars 
-PASSWORDS_FILE_PATH = "dummy.csv"
+PASSWORDS_FILE_PATH = "passwords.csv"
 DATABASE = pd.read_csv(PASSWORDS_FILE_PATH)
 
 
